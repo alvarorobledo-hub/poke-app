@@ -1,7 +1,6 @@
 package com.app.pokemon.application.mother;
 
 import com.app.pokemon.application.dto.PokemonResponse;
-import com.app.pokemon.domain.model.Pokemon;
 
 public class PokemonResponseObjectMother {
 
