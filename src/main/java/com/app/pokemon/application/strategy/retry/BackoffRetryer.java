@@ -11,13 +11,11 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @RequiredArgsConstructor
-public class BackoffRetryer implements Retryer, Cloneable {
+public class BackoffRetryer implements Retryer {
 
     private final long initialDelay;
     private final long maxDelay;
     private final int maxAttempts;
-
-    public static List<BackoffRetryer> children;
 
     BackoffRetryer() {
         this.initialDelay = 2000;
@@ -30,8 +28,6 @@ public class BackoffRetryer implements Retryer, Cloneable {
         this.maxDelay = retryer.maxDelay;
         this.maxAttempts = retryer.maxAttempts;
         this.attempt = retryer.attempt;
-
-        children = retryer.children.stream().map(child -> (BackoffRetryer) child.clone()).toList();
     }
 
     private int attempt = 1;
@@ -53,16 +49,5 @@ public class BackoffRetryer implements Retryer, Cloneable {
         }
 
         attempt++;
-    }
-
-    @Override
-    public Retryer clone() {
-        try {
-            BackoffRetryer copy = (BackoffRetryer) super.clone();
-            copy.children = children.stream().map(child -> (BackoffRetryer) child.clone()).toList();
-            return copy;
-        } catch (CloneNotSupportedException e) {
-            throw new PokemonServerError();
-        }
     }
 }
