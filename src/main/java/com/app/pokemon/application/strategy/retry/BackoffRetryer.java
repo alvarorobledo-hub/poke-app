@@ -6,15 +6,18 @@ import feign.Retryer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @RequiredArgsConstructor
-public class BackoffRetryer implements Retryer {
+public class BackoffRetryer implements Retryer, Cloneable {
 
     private final long initialDelay;
     private final long maxDelay;
     private final int maxAttempts;
+
+    public List<BackoffRetryer> children;
 
     public BackoffRetryer() {
         this.initialDelay = 2000;
@@ -52,6 +55,12 @@ public class BackoffRetryer implements Retryer {
 
     @Override
     public Retryer clone() {
-        return new BackoffRetryer(this);
+        try {
+            BackoffRetryer copy = (BackoffRetryer) super.clone();
+            copy.children = children.stream().map(child -> (BackoffRetryer) child.clone()).toList();
+            return copy;
+        } catch (CloneNotSupportedException e) {
+            throw new PokemonServerError();
+        }
     }
 }
