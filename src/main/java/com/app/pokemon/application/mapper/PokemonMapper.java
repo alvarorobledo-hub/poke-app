@@ -2,10 +2,11 @@ package com.app.pokemon.application.mapper;
 
 import com.app.pokemon.application.dto.PokemonResponse;
 import com.app.pokemon.domain.model.Pokemon;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 public class PokemonMapper {
+
+    private PokemonMapper() {}
+
     public static Pokemon from(PokemonResponse pokemonResponse) {
         return Pokemon.builder()
                 .id(pokemonResponse.getId())
