@@ -49,4 +49,9 @@ public class BackoffRetryer implements Retryer {
 
         attempt++;
     }
+
+    @Override
+    public Retryer clone() {
+        return new BackoffRetryer(this);
+    }
 }
