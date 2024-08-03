@@ -1,0 +1,53 @@
+spring:
+  jmx.enabled: false
+  main.banner-mode: "off"
+  application:
+    name: poke-app
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 10000
+            readTimeout: 10000
+            loggerLevel: basic
+            retryer: com.app.pokemon.application.strategy.retry.BackoffRetryer
+            error-decoder: com.app.pokemon.application.strategy.decoder.FeignErrorDecoder
+  profiles:
+    active: dev
+management:
+  endpoints.web.base-path: /management
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+logging.level:
+  com.app.pokemon: debug
+redis:
+  base-url: localhost
+  port: 6379
+  password: admin
+  ttl-in-days: 7
+poke-api:
+  base-url: https://pokeapi.co/api/v2/
+  offset: 0
+  limit: 20
+
+---
+spring:
+  config:
+    activate:
+      on-profile: pro
+logging.level:
+  com.app.pokemon: info
+redis:
+  base-url: localhost
+  port: 6379
+  password: admin
+  ttl-in-days: 180
+poke-api:
+  base-url: https://pokeapi.co/api/v2/
+  offset: 0
+  limit: 50
