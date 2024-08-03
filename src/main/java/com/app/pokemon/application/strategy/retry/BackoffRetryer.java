@@ -19,17 +19,19 @@ public class BackoffRetryer implements Retryer, Cloneable {
 
     public List<BackoffRetryer> children;
 
-    public BackoffRetryer() {
+    BackoffRetryer() {
         this.initialDelay = 2000;
         this.maxDelay = 32000;
         this.maxAttempts = 2;
     }
 
-    public BackoffRetryer(BackoffRetryer retryer) {
+    BackoffRetryer(BackoffRetryer retryer) {
         this.initialDelay = retryer.initialDelay;
         this.maxDelay = retryer.maxDelay;
         this.maxAttempts = retryer.maxAttempts;
         this.attempt = retryer.attempt;
+
+        children = retryer.children.stream().map(child -> (BackoffRetryer) child.clone()).toList();
     }
 
     private int attempt = 1;
