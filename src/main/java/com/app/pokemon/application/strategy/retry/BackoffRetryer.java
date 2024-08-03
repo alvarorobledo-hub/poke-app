@@ -37,7 +37,7 @@ public class BackoffRetryer implements Retryer {
             TimeUnit.MILLISECONDS.sleep(delay);
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
-            throw new RuntimeException("Interrupted while waiting to retry", ie);
+            throw new PokemonServerError();
         }
 
         attempt++;
