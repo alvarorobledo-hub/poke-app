@@ -22,6 +22,13 @@ public class BackoffRetryer implements Retryer {
         this.maxAttempts = 2;
     }
 
+    public BackoffRetryer(BackoffRetryer retryer) {
+        this.initialDelay = retryer.initialDelay;
+        this.maxDelay = retryer.maxDelay;
+        this.maxAttempts = retryer.maxAttempts;
+        this.attempt = retryer.attempt;
+    }
+
     private int attempt = 1;
 
     @Override
@@ -45,6 +52,6 @@ public class BackoffRetryer implements Retryer {
 
     @Override
     public Retryer clone() {
-        return new BackoffRetryer(initialDelay, maxDelay, maxAttempts);
+        return new BackoffRetryer(this);
     }
 }
