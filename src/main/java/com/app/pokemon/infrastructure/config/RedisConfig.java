@@ -1,5 +1,6 @@
 package com.app.pokemon.infrastructure.config;
 
+import jakarta.annotation.PreDestroy;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.codec.JsonJacksonCodec;
@@ -20,14 +21,27 @@ public class RedisConfig {
     @Value("${redis.password}")
     private String password;
 
+    private RedissonClient redissonClient;
+
     @Bean
     public RedissonClient redissonClient() {
-        Config config = new Config();
-        config.setCodec(new JsonJacksonCodec());
-        config.useSingleServer()
-                .setAddress("redis://" + baseUrl + ":" + port)
-                .setPassword(password);
+        if (redissonClient == null) {
+            Config config = new Config();
+            config.setCodec(new JsonJacksonCodec());
+            config.useSingleServer()
+                    .setAddress("redis://" + baseUrl + ":" + port)
+                    .setPassword(password);
 
-        return Redisson.create(config);
+            redissonClient = Redisson.create(config);
+        }
+
+        return redissonClient;
+    }
+
+    @PreDestroy
+    public void destroy() {
+        if (redissonClient != null) {
+            redissonClient.shutdown();
+        }
     }
 }
