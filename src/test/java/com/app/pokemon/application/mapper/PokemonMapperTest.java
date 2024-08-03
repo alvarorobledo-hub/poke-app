@@ -36,5 +36,4 @@ class PokemonMapperTest {
         assertEquals(expectedResponse, response);
     }
 
-
 }
