@@ -17,7 +17,7 @@ public class BackoffRetryer implements Retryer, Cloneable {
     private final long maxDelay;
     private final int maxAttempts;
 
-    public List<BackoffRetryer> children;
+    public static List<BackoffRetryer> children;
 
     BackoffRetryer() {
         this.initialDelay = 2000;
