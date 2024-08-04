@@ -11,8 +11,12 @@ version = "0.0.2-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+jacoco {
+    toolVersion = "0.8.8"
 }
 
 configurations {
@@ -60,7 +64,7 @@ sonarqube {
         property "sonar.host.url", "http://localhost:9000"
         property "sonar.token", "sqa_5b904424711fb58e6b3fe6e57d332f21a9fb5fe9"
         property "sonar.java.coveragePlugin", "jacoco"
-        property "sonar.coverage.jacoco.xmlReportPaths", "${layout.buildDirectory.dir("build")}/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.coverage.jacoco.xmlReportPaths", "${layout.buildDirectory.get()}/reports/jacoco/test/jacocoTestReport.xml"
     }
 }
 
@@ -72,14 +76,13 @@ dependencyManagement {
 
 tasks.named("test") {
     useJUnitPlatform()
-    finalizedBy "jacocoTestReport"
+    finalizedBy(tasks.named("jacocoTestReport"))
 }
 
 jacocoTestReport {
     dependsOn test
     reports {
         xml.required.set(true)
-        csv.required.set(false)
         html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
     }
 }
