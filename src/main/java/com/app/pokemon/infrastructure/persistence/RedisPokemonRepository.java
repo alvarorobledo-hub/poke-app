@@ -25,9 +25,9 @@ public class RedisPokemonRepository implements PokemonRepository {
     private final RedissonClient redissonClient;
 
     @Override
-    public void save(List<Pokemon> pokemons) {
+    public void save(List<Pokemon> pokemonList) {
         RMap<Integer, Pokemon> pokemonMap = redissonClient.getMap(POKEMON_KEY);
-        Map<Integer, Pokemon> pokemonMapBatch = pokemons.stream()
+        Map<Integer, Pokemon> pokemonMapBatch = pokemonList.stream()
                 .collect(Collectors.toMap(Pokemon::getId, pokemon -> pokemon));
 
         pokemonMap.putAll(pokemonMapBatch);

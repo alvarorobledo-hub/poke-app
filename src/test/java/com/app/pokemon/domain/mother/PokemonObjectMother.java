@@ -4,6 +4,8 @@ import com.app.pokemon.domain.model.Pokemon;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class PokemonObjectMother {
 
@@ -318,5 +320,9 @@ public class PokemonObjectMother {
         );
 
         return pokemonList;
+    }
+
+    public static Map<Integer, Pokemon> createAllPokemonMap() {
+        return createAllPokemon().stream().collect(Collectors.toMap(Pokemon::getId, pokemon -> pokemon));
     }
 }
