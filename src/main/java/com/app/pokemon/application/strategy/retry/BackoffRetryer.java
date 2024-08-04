@@ -45,7 +45,7 @@ public class BackoffRetryer implements Retryer {
 
         try {
             log.info("Retry attempt {}. Retrying in {} seconds...", attempt, delay / 1000);
-            TimeUnit.MILLISECONDS.sleep(delay);
+            sleep(delay);
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
             throw new PokemonServerError();
@@ -57,5 +57,9 @@ public class BackoffRetryer implements Retryer {
     @Override
     public Retryer clone() {
         return new BackoffRetryer(this);
+    }
+
+    protected void sleep(long delay) throws InterruptedException {
+        TimeUnit.MILLISECONDS.sleep(delay);
     }
 }
