@@ -57,7 +57,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(1)
+                        .id(987)
                         .name("Machop")
                         .weight(72)
                         .height(46)
@@ -66,7 +66,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(1)
+                        .id(49)
                         .name("Voltorb")
                         .weight(12)
                         .height(12)
@@ -81,7 +81,7 @@ public class PokemonObjectMother {
         List<Pokemon> pokemonList = new ArrayList<>();
         pokemonList.add(
                 Pokemon.builder()
-                        .id(66)
+                        .id(665)
                         .name("Jigglypuff")
                         .weight(999)
                         .height(25)
@@ -90,7 +90,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(12)
+                        .id(122)
                         .name("Rayquaza")
                         .weight(872)
                         .height(27)
@@ -99,7 +99,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(72)
+                        .id(723)
                         .name("Eevee")
                         .weight(801)
                         .height(19)
@@ -108,7 +108,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(1)
+                        .id(111)
                         .name("Blaziken")
                         .weight(777)
                         .height(46)
@@ -117,7 +117,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(1)
+                        .id(408)
                         .name("Ditto")
                         .weight(750)
                         .height(12)
@@ -132,7 +132,7 @@ public class PokemonObjectMother {
         List<Pokemon> pokemonList = new ArrayList<>();
         pokemonList.add(
                 Pokemon.builder()
-                        .id(66)
+                        .id(686)
                         .name("Rattata")
                         .weight(87)
                         .height(888)
@@ -141,7 +141,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(12)
+                        .id(339)
                         .name("Snorlax")
                         .weight(9)
                         .height(871)
@@ -150,7 +150,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(72)
+                        .id(576)
                         .name("Psyduck")
                         .weight(21)
                         .height(856)
@@ -159,7 +159,7 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(1)
+                        .id(6)
                         .name("Mewtwo")
                         .weight(33)
                         .height(856)
@@ -168,10 +168,151 @@ public class PokemonObjectMother {
         );
         pokemonList.add(
                 Pokemon.builder()
-                        .id(1)
+                        .id(299)
                         .name("Magikarp")
                         .weight(2)
                         .height(853)
+                        .baseExperience(43)
+                        .build()
+        );
+
+        return pokemonList;
+    }
+
+    public static List<Pokemon> createAllPokemon() {
+        List<Pokemon> pokemonList = new ArrayList<>();
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(686)
+                        .name("Rattata")
+                        .weight(87)
+                        .height(888)
+                        .baseExperience(16)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(339)
+                        .name("Snorlax")
+                        .weight(9)
+                        .height(871)
+                        .baseExperience(59)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(576)
+                        .name("Psyduck")
+                        .weight(21)
+                        .height(856)
+                        .baseExperience(30)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(66)
+                        .name("Pikachu")
+                        .weight(98)
+                        .height(25)
+                        .baseExperience(927)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(12)
+                        .name("Charmander")
+                        .weight(12)
+                        .height(27)
+                        .baseExperience(678)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(72)
+                        .name("Squirtle")
+                        .weight(54)
+                        .height(19)
+                        .baseExperience(512)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(987)
+                        .name("Machop")
+                        .weight(72)
+                        .height(46)
+                        .baseExperience(510)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(49)
+                        .name("Voltorb")
+                        .weight(12)
+                        .height(12)
+                        .baseExperience(499)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(6)
+                        .name("Mewtwo")
+                        .weight(33)
+                        .height(856)
+                        .baseExperience(88)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(299)
+                        .name("Magikarp")
+                        .weight(2)
+                        .height(853)
+                        .baseExperience(43)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(665)
+                        .name("Jigglypuff")
+                        .weight(999)
+                        .height(25)
+                        .baseExperience(16)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(122)
+                        .name("Rayquaza")
+                        .weight(872)
+                        .height(27)
+                        .baseExperience(59)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(723)
+                        .name("Eevee")
+                        .weight(801)
+                        .height(19)
+                        .baseExperience(30)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(111)
+                        .name("Blaziken")
+                        .weight(777)
+                        .height(46)
+                        .baseExperience(88)
+                        .build()
+        );
+        pokemonList.add(
+                Pokemon.builder()
+                        .id(408)
+                        .name("Ditto")
+                        .weight(750)
+                        .height(12)
                         .baseExperience(43)
                         .build()
         );

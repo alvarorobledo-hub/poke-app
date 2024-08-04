@@ -1,6 +1,6 @@
 package com.app.pokemon.infrastructure.api.handler;
 
-import com.app.pokemon.application.dto.PokemonErrorResponse;
+import com.app.pokemon.domain.model.PokemonError;
 import com.app.pokemon.domain.exceptions.PokemonNotFound;
 import com.app.pokemon.domain.exceptions.PokemonServerError;
 import org.springframework.http.HttpStatus;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class PokemonControllerExceptionHandler {
 
     @ExceptionHandler({PokemonServerError.class, Exception.class})
-    public ResponseEntity<PokemonErrorResponse> handlePokemonServerError(Exception e) {
+    public ResponseEntity<PokemonError> handlePokemonServerError(Exception e) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
-        PokemonErrorResponse error = PokemonErrorResponse.builder()
+        PokemonError error = PokemonError.builder()
                 .message(e.getMessage())
                 .pokeStatus(status.value())
                 .build();
@@ -23,9 +23,9 @@ public class PokemonControllerExceptionHandler {
     }
 
     @ExceptionHandler(PokemonNotFound.class)
-    public ResponseEntity<PokemonErrorResponse> handlePokemonNotFound(PokemonNotFound e) {
+    public ResponseEntity<PokemonError> handlePokemonNotFound(PokemonNotFound e) {
         HttpStatus status = HttpStatus.NOT_FOUND;
-        PokemonErrorResponse error = PokemonErrorResponse.builder()
+        PokemonError error = PokemonError.builder()
                 .message(e.getMessage())
                 .pokeStatus(status.value())
                 .build();
