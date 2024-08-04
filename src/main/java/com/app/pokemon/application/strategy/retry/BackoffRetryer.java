@@ -56,7 +56,11 @@ public class BackoffRetryer implements Retryer {
 
     @Override
     public Retryer clone() {
-        return new BackoffRetryer(this);
+        try {
+            return new BackoffRetryer((BackoffRetryer) super.clone());
+        } catch (CloneNotSupportedException e) {
+            throw new PokemonServerError();
+        }
     }
 
     protected void sleep(long delay) throws InterruptedException {

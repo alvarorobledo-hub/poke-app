@@ -35,7 +35,6 @@ class BackoffRetryerTest {
     @Test
     void shouldRetryerThrowExceptionWithMaxDelay() {
         BackoffRetryer retryer = new BackoffRetryer(DEFAULT_INITIAL_DELAY, 5000, 3);
-        RetryableException exception = mock(RetryableException.class);
 
         long startTime = System.currentTimeMillis();
 
