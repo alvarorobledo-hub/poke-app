@@ -1,10 +1,9 @@
 package com.app.pokemon.infrastructure.mapper;
 
-import com.app.pokemon.infrastructure.dto.PokemonResponse;
-import com.app.pokemon.domain.model.Pokemon;
 import com.app.pokemon.application.mother.PokemonResponseObjectMother;
+import com.app.pokemon.domain.model.Pokemon;
 import com.app.pokemon.domain.mother.PokemonObjectMother;
-import com.app.pokemon.infrastructure.mapper.PokemonMapper;
+import com.app.pokemon.infrastructure.dto.PokemonResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
