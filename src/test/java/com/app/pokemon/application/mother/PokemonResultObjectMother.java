@@ -1,6 +1,6 @@
 package com.app.pokemon.application.mother;
 
-import com.app.pokemon.application.dto.PokemonResult;
+import com.app.pokemon.infrastructure.dto.PokemonResult;
 
 import java.util.ArrayList;
 import java.util.List;

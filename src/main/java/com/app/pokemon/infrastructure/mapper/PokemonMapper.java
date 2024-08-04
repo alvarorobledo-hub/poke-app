@@ -1,6 +1,6 @@
-package com.app.pokemon.application.mapper;
+package com.app.pokemon.infrastructure.mapper;
 
-import com.app.pokemon.application.dto.PokemonResponse;
+import com.app.pokemon.infrastructure.dto.PokemonResponse;
 import com.app.pokemon.domain.model.Pokemon;
 
 public class PokemonMapper {

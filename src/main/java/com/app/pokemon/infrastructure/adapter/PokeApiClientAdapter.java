@@ -1,7 +1,7 @@
 package com.app.pokemon.infrastructure.adapter;
 
-import com.app.pokemon.application.dto.PokemonPageResponse;
-import com.app.pokemon.application.dto.PokemonResponse;
+import com.app.pokemon.infrastructure.dto.PokemonPageResponse;
+import com.app.pokemon.infrastructure.dto.PokemonResponse;
 import com.app.pokemon.domain.client.PokeApiClient;
 import com.app.pokemon.domain.model.Pokemon;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.app.pokemon.application.mapper.PokemonMapper.from;
+import static com.app.pokemon.infrastructure.mapper.PokemonMapper.from;
 import static com.app.pokemon.domain.utils.PokeApiUtils.extractIdFromUrl;
 
 @Slf4j

@@ -1,6 +1,6 @@
 package com.app.pokemon.application.mother;
 
-import com.app.pokemon.application.dto.PokemonResponse;
+import com.app.pokemon.infrastructure.dto.PokemonResponse;
 
 import java.util.HashMap;
 import java.util.Map;

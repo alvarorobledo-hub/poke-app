@@ -3,6 +3,7 @@ package com.app.pokemon.application.strategy.retry;
 import com.app.pokemon.domain.exceptions.PokemonServerError;
 import feign.RetryableException;
 import feign.Retryer;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,17 +13,20 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class BackoffRetryer implements Retryer {
 
+    @Getter
     private final long initialDelay;
+    @Getter
     private final long maxDelay;
+    @Getter
     private final int maxAttempts;
 
-    BackoffRetryer() {
+    public BackoffRetryer() {
         this.initialDelay = 2000;
         this.maxDelay = 32000;
-        this.maxAttempts = 2;
+        this.maxAttempts = 5;
     }
 
-    BackoffRetryer(BackoffRetryer retryer) {
+    public BackoffRetryer(BackoffRetryer retryer) {
         this.initialDelay = retryer.initialDelay;
         this.maxDelay = retryer.maxDelay;
         this.maxAttempts = retryer.maxAttempts;

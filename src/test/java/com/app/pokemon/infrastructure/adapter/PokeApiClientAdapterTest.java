@@ -1,8 +1,8 @@
 package com.app.pokemon.infrastructure.adapter;
 
-import com.app.pokemon.application.dto.PokemonPageResponse;
-import com.app.pokemon.application.dto.PokemonResponse;
-import com.app.pokemon.application.dto.PokemonResult;
+import com.app.pokemon.infrastructure.dto.PokemonPageResponse;
+import com.app.pokemon.infrastructure.dto.PokemonResponse;
+import com.app.pokemon.infrastructure.dto.PokemonResult;
 import com.app.pokemon.domain.model.Pokemon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

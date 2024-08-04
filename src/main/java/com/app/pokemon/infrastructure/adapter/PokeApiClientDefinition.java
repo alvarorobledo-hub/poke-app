@@ -1,7 +1,7 @@
 package com.app.pokemon.infrastructure.adapter;
 
-import com.app.pokemon.application.dto.PokemonPageResponse;
-import com.app.pokemon.application.dto.PokemonResponse;
+import com.app.pokemon.infrastructure.dto.PokemonPageResponse;
+import com.app.pokemon.infrastructure.dto.PokemonResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

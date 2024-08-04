@@ -1,4 +1,4 @@
-package com.app.pokemon.application.dto;
+package com.app.pokemon.infrastructure.dto;
 
 import lombok.Builder;
 import lombok.Data;
