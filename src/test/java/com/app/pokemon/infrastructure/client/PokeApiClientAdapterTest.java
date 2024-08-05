@@ -1,4 +1,4 @@
-package com.app.pokemon.infrastructure.adapter;
+package com.app.pokemon.infrastructure.client;
 
 import com.app.pokemon.infrastructure.dto.PokemonPageResponse;
 import com.app.pokemon.infrastructure.dto.PokemonResponse;
@@ -17,7 +17,7 @@ import java.util.Map;
 import static com.app.pokemon.application.mother.PokemonPageResponseObjectMother.createPokemonPageResponse;
 import static com.app.pokemon.application.mother.PokemonResponseObjectMother.createAllPokemonMap;
 import static com.app.pokemon.domain.mother.PokemonObjectMother.createAllPokemon;
-import static com.app.pokemon.domain.utils.PokeApiUtils.extractIdFromUrl;
+import static com.app.pokemon.application.utils.PokeApiUtils.extractIdFromUrl;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
@@ -33,7 +33,7 @@ class PokeApiClientAdapterTest {
     private PokeApiClientDefinition client;
 
     @InjectMocks
-    private PokeApiClientAdapter adapter;
+    private PokeApiClient adapter;
 
     @BeforeEach
     void setUp() {

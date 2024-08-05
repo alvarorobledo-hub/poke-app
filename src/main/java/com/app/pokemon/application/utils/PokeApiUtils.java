@@ -1,4 +1,4 @@
-package com.app.pokemon.domain.utils;
+package com.app.pokemon.application.utils;
 
 public class PokeApiUtils {
 

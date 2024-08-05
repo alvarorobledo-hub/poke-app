@@ -1,8 +1,8 @@
-package com.app.pokemon.infrastructure.adapter;
+package com.app.pokemon.infrastructure.client;
 
 import com.app.pokemon.infrastructure.dto.PokemonPageResponse;
 import com.app.pokemon.infrastructure.dto.PokemonResponse;
-import com.app.pokemon.domain.client.PokeApiClient;
+import com.app.pokemon.domain.client.PokemonClient;
 import com.app.pokemon.domain.model.Pokemon;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.app.pokemon.infrastructure.mapper.PokemonMapper.from;
-import static com.app.pokemon.domain.utils.PokeApiUtils.extractIdFromUrl;
+import static com.app.pokemon.application.utils.PokeApiUtils.extractIdFromUrl;
 
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class PokeApiClientAdapter implements PokeApiClient {
+public class PokeApiClient implements PokemonClient {
 
     @Value("${poke-api.limit}")
     Integer limit;

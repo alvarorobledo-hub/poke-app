@@ -6,7 +6,7 @@ import feign.Response;
 import feign.codec.ErrorDecoder;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.app.pokemon.domain.utils.PokeApiUtils.extractIdFromUrl;
+import static com.app.pokemon.application.utils.PokeApiUtils.extractIdFromUrl;
 
 @Slf4j
 public class FeignErrorDecoder implements ErrorDecoder {

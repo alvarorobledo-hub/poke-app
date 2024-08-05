@@ -1,4 +1,4 @@
-package com.app.pokemon.domain.utils;
+package com.app.pokemon.application.utils;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

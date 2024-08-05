@@ -1,6 +1,6 @@
 package com.app.pokemon.application.service;
 
-import com.app.pokemon.domain.client.PokeApiClient;
+import com.app.pokemon.domain.client.PokemonClient;
 import com.app.pokemon.domain.model.Pokemon;
 import com.app.pokemon.domain.repository.PokemonRepository;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class TopHeaviestPokemonServiceTest {
     private static final Integer DEFAULT_TOP = 5;
 
     @Mock
-    private PokeApiClient client;
+    private PokemonClient client;
 
     @Mock
     private PokemonRepository repository;

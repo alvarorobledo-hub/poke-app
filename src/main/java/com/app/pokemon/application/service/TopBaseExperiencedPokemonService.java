@@ -1,6 +1,6 @@
 package com.app.pokemon.application.service;
 
-import com.app.pokemon.domain.client.PokeApiClient;
+import com.app.pokemon.domain.client.PokemonClient;
 import com.app.pokemon.domain.model.Pokemon;
 import com.app.pokemon.domain.repository.PokemonRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TopBaseExperiencedPokemonService {
 
-    private final PokeApiClient client;
+    private final PokemonClient client;
     private final PokemonRepository pokemonRepository;
 
     public List<Pokemon> getTopBaseExperiencePokemon(Integer top)  {

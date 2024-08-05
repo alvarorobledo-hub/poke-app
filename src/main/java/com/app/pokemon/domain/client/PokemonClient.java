@@ -4,6 +4,6 @@ import com.app.pokemon.domain.model.Pokemon;
 
 import java.util.List;
 
-public interface PokeApiClient {
+public interface PokemonClient {
     List<Pokemon> getAllPokemon();
 }

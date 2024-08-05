@@ -1,4 +1,4 @@
-package com.app.pokemon.infrastructure.adapter;
+package com.app.pokemon.infrastructure.client;
 
 import com.app.pokemon.infrastructure.dto.PokemonPageResponse;
 import com.app.pokemon.infrastructure.dto.PokemonResponse;
