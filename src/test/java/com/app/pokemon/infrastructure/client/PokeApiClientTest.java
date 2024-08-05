@@ -24,7 +24,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class PokeApiClientAdapterTest {
+class PokeApiClientTest {
 
     private static final Integer DEFAULT_LIMIT = 20;
     private static final Integer DEFAULT_OFFSET = 0;

@@ -15,5 +15,5 @@ public interface PokeApiClientDefinition {
     PokemonResponse getPokemon(@PathVariable("id") Integer id);
 
     @GetMapping(value = "/pokemon", consumes = MediaType.APPLICATION_JSON_VALUE)
-    PokemonPageResponse getPokemonPage(@RequestParam Integer offset, @RequestParam Integer limit);
+    PokemonPageResponse getPokemonPage(@RequestParam(name = "offset") Integer offset, @RequestParam(name = "limit") Integer limit);
 }
