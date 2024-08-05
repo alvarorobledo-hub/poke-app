@@ -56,7 +56,7 @@ dependencies {
 
 ```sh
 https://github.com/alvarorobledo-hub/poke-app.git
-cd pokeapp
+cd poke-app
 ```
 
 ### Paso 2: Construir el Proyecto
@@ -71,7 +71,7 @@ cd pokeapp
 docker-compose up -d
 ```
 ---
-La aplicación estará disponible en http://localhost:8080. 
+La aplicación estará disponible en http://localhost:8080 y http://localhost:8080/swagger-ui/index.html. 
 Previamente se ha subido la imagen a docker-hub https://hub.docker.com/repository/docker/alvarorobledo/pokeapp/general con el tag 1.0.0 y latest.
 
 ## Arquitectura
