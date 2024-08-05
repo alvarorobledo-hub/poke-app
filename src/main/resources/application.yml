@@ -43,7 +43,7 @@ spring:
 logging.level:
   com.app.pokemon: info
 redis:
-  base-url: localhost
+  base-url: redis
   port: 6379
   password: admin
   ttl-in-days: 180
